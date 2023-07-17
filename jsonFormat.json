@@ -1,0 +1,98 @@
+openapi: 3.0.0
+info:
+  title: Your API
+  version: 1.0.0
+paths:
+  /your-endpoint:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/YourSchema'
+      responses:
+        '200':
+          description: OK
+components:
+  schemas:
+    YourSchema:
+      type: object
+      properties:
+        status:
+          type: integer
+        message:
+          type: string
+        file:
+          type: string
+        synapse:
+          type: object
+          properties:
+            id:
+              type: string
+            runId:
+              type: string
+            debugRunId:
+              type: null
+            runGroupId:
+              type: string
+            pipelineName:
+              type: string
+            parameters:
+              type: object
+            invokedBy:
+              type: object
+              properties:
+                id:
+                  type: string
+                name:
+                  type: string
+                invokedByType:
+                  type: string
+              required:
+                - id
+                - name
+                - invokedByType
+            runStart:
+              type: string
+            runEnd:
+              type: null
+            durationInMs:
+              type: null
+            status:
+              type: string
+            message:
+              type: null
+            pipelineReturnValue:
+              type: null
+            lastUpdated:
+              type: string
+            annotations:
+              type: array
+              items: {}
+            runDimension:
+              type: object
+            isLatest:
+              type: boolean
+          required:
+            - id
+            - runId
+            - debugRunId
+            - runGroupId
+            - pipelineName
+            - parameters
+            - invokedBy
+            - runStart
+            - runEnd
+            - durationInMs
+            - status
+            - message
+            - pipelineReturnValue
+            - lastUpdated
+            - annotations
+            - runDimension
+            - isLatest
+      required:
+        - status
+        - message
+        - file
+        - synapse
