@@ -1,0 +1,31 @@
+{
+  "openapi": "3.0.2",
+  "info": {
+    "title": "My OpenAPI",
+    "version": "v1"
+  },
+  "servers": [
+    {
+      "url": "functionaeromannodejs.azurewebsites.net"
+    }
+  ],
+  "paths": {
+    "/foo": {
+      "get": {
+        "summary": "Som cool function",
+        "responses": {
+          "200": {
+            "description": "Retrieved entities",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
