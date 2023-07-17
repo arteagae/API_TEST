@@ -1,0 +1,101 @@
+openapi: 3.0.0
+info:
+  title: Your API
+  version: 1.0.0
+paths:
+  /your-endpoint:
+    post:
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/YourResponse'
+components:
+  schemas:
+    YourResponse:
+      type: object
+      properties:
+        status:
+          type: integer
+        message:
+          type: string
+        file:
+          type: string
+        synapse:
+          type: object
+          properties:
+            id:
+              type: string
+            runId:
+              type: string
+            debugRunId:
+              type: string
+            runGroupId:
+              type: string
+            pipelineName:
+              type: string
+            parameters:
+              type: object
+            invokedBy:
+              type: object
+              properties:
+                id:
+                  type: string
+                name:
+                  type: string
+                invokedByType:
+                  type: string
+              required:
+                - id
+                - name
+                - invokedByType
+            runStart:
+              type: string
+            runEnd:
+              type: string
+              nullable: true
+            durationInMs:
+              type: string
+              nullable: true
+            status:
+              type: string
+            message:
+              type: string
+              nullable: true
+            pipelineReturnValue:
+              type: string
+              nullable: true
+            lastUpdated:
+              type: string
+            annotations:
+              type: array
+              items: {}
+            runDimension:
+              type: object
+            isLatest:
+              type: boolean
+          required:
+            - id
+            - runId
+            - debugRunId
+            - runGroupId
+            - pipelineName
+            - parameters
+            - invokedBy
+            - runStart
+            - runEnd
+            - durationInMs
+            - status
+            - message
+            - pipelineReturnValue
+            - lastUpdated
+            - annotations
+            - runDimension
+            - isLatest
+      required:
+        - status
+        - message
+        - file
+        - synapse
