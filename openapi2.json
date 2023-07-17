@@ -6,7 +6,7 @@
   },
   "servers": [
     {
-      "url": "functionaeromannodejs.azurewebsites.net"
+      "url": "https://functionaeromannodejs.azurewebsites.net/api/apinorutina_onprem?code=h_GPqlAqCwUj8VzOdaPndVzY7R_XuvT1Ex77F20EuLRmAzFufWJxzA%3D%3D&file=LOGO_FAS.png"
     }
   ],
   "paths": {
